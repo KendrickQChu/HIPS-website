@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9f9;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 8vh;
+  justify-items: start;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.navbar {
+  grid-column: 1 / 2;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav ul li {
+  margin-bottom: 0em;
+  margin-left: 1.5em;
+}
+
+nav ul li a {
+  color: #808a8c;
+  text-decoration: none;
+  font-size: 1em;
+  text-transform: uppercase;
+}
+
+nav ul li a::after {
+  content: '';
+  display: block;
+  height: 5px;
+  background: #305b63;
+  bottom: -0.75em;
+  left: 0;
+  right: 0;
+  transform: scale(0, 1);
+  transform-origin: left;
+  transition: transform ease-in-out 200ms;
+}
+
+nav ul li a:hover {
+  color: #305b63;
+}
+
+nav ul li a:hover::after {
+  transform: scale(1, 1);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: minmax(5vmin, 10vmin) minmax(45vmin, 2fr) minmax(45vmin, 2fr);
+  grid-gap: 5vmin 5vmin;
+  margin-left: 5vmin;
+  margin-right: 5vmin;
+  margin-bottom: 5vmin;
+}
+
+.grid h1 {
+  grid-column: 1 / -1;
+  margin-left: 2vw;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 2.5em;
+  color: #344143;
+  place-self: center stretch;
+}
+
+.grid div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid div p {
+  font-family: 'Roboto', sans-serif;
+}
+
+.item1 {
+  background: url(cavemptHoodie.jpg) no-repeat center center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.item2 {
+  background: url(undercoverParka.jpg) no-repeat center center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.item3 {
+  background: url(undercoverShirt.jpg) no-repeat center center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.item4 {
+  background: url(nikeACGAlpine.jpg) no-repeat center center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.item5 {
+  background: url(acronymJacket.jpeg) no-repeat center center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.item6 {
+  background: url(juliusCargos.jpg) no-repeat center center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.grid div {
+  color: transparent;
+  transition: opacity 4s ease-in-out;
+}
+
+.grid div:hover {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.25);
+  background-blend-mode: overlay;
+}
+
+footer {
+  padding-left: 5vw;
+  margin-top: 10vh;
+  background-color: #344143;
+  display: flex;
+  width: 100vw;
+  height: 30vh;
+  flex-direction: column;
+  font-family: 'Roboto', sans-serif;
+  color: #f8f9f9;
+}
+
+footer ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}

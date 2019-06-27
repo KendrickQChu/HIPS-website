@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9f9;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.withBackground {
+  background: url(homeBackground.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100vh;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.4);
+  background-blend-mode: overlay;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  margin-bottom: 10vh;
+}
+
+nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 8vh;
+  justify-items: start;
+}
+
+.navbar {
+  grid-column: 1 / 2;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav ul li {
+  margin-bottom: 0em;
+  margin-left: 1.5em;
+}
+
+nav ul li a {
+  color: #f8f9f9;
+  text-decoration: none;
+  font-size: 1em;
+  text-transform: uppercase;
+}
+
+nav ul li a::after {
+  content: '';
+  display: block;
+  height: 5px;
+  background: #305b63;
+  bottom: -0.75em;
+  left: 0;
+  right: 0;
+  transform: scale(0, 1);
+  transform-origin: left;
+  transition: transform ease-in-out 200ms;
+}
+
+nav ul li a:hover {
+  color: #305b63;
+}
+
+nav ul li a:hover::after {
+  transform: scale(1, 1);
+}
+
+.typeAnim {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 25vh;
+  margin-left: 5vw;
+}
+
+.typeAnim h1{
+  width: 10em;
+  border-right: 0.15em solid white;
+  color: #ecedef;
+  font-size: 3em;
+  overflow: hidden;
+  white-space: nowrap;
+  animation:
+    typingAnim 2.5s steps(30, end),
+    blinkCaret 0.75s steps(40) infinite normal;
+}
+
+@keyframes typingAnim{
+  from {width: 0;}
+  to {width: 10em;}
+}
+
+@keyframes blinkCaret{
+  0%, 100% {border-right-color: solid white;}
+  50% {border-right-color: transparent;}
+}
+
+strong {
+  animation: highlight 1.5s ease-in-out 2.75s forwards;
+}
+
+@keyframes highlight {
+  from {color: #f8f9f9;}
+  to {color: #AC3A3A;}
+}
+
+.carousel {
+  position: relative;
+  height: 95vh;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.carouselImage {
+  width: 100%;
+  height: 100%;
+  max-height: auto;
+  object-fit: cover;
+}
+
+.carouselTrackContainer {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.carouselTrack {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: relative;
+  height: 100%;
+  transition: transform 250ms ease-in;
+}
+
+.carouselSlide {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.carouselButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(50%);
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.carouselButtonLeft {
+  left: -35px;
+}
+
+.carouselButtonRight {
+  right: -35px;
+}
+
+.carouselButton img {
+  width: 18px;
+}
+
+.carouselNav {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.carouselIndicator {
+  border: 0;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  background: rgba(0, 0, 0, 0.3);
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.carouselIndicator.currentSlide {
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.isHidden {
+  display: none;
+}
+
+footer {
+  margin-top: 10vh;
+  background-color: #344143;
+  display: grid;
+  width: 100vw;
+  height: 20vh;
+  grid-template-columns: 1fr 2fr 2fr;
+  grid-template-rows: 1fr 2fr 2fr;
+  justify-items: center;
+  align-items: center;
+}
+
+footer h3 {
+  color: #f8f9f9;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.5em;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.codeSource {
+  color: #f8f9f9;
+  font-family: 'Roboto', sans-serif;
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+.imageSource {
+  color: #f8f9f9;
+  font-family: 'Roboto', sans-serif;
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+}
+
+.codeLink {
+  color: #adb4b5;
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+.codeLink:hover {
+  color: #f8f9f9;
+}
+
+.imageLink {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.imageLink a {
+  color: #adb4b5;
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+}
+
+.imageLink a:hover {
+  color: #f8f9f9;
+}
